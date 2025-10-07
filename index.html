@@ -1,0 +1,145 @@
+<html>
+  <body>
+
+    <div class="whatsapp-container">
+
+        <div class="page chat-list-page active">
+            
+            <header class="chat-header">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Tanya Meta AI atau Cari">
+                </div>
+            </header>
+
+            <div class="filter-buttons">
+                <span class="filter active">Semua</span>
+                <span class="filter">Belum dibaca</span>
+                <span class="filter">Favorit</span>
+                <span class="filter">Grup</span>
+            </div>
+
+            <div class="chat-list">
+                <div class="chat-card" onclick="openChat('Fizz')">
+                    <div class="chat-avatar">
+                        <img src="https://via.placeholder.com/50/555" alt="Avatar">
+                    </div>
+                    <div class="chat-details">
+                        <div class="chat-info">
+                            <span class="chat-name">Fizz</span>
+                            <span class="chat-time">07.18</span>
+                        </div>
+                        <div class="chat-message">
+                            <i class="fas fa-check-double read-receipt"></i>
+                            <p class="message-preview">Kalau bisa di lakukan besok, ke...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-card" onclick="openChat('Riki Ardiansah')">
+                    <div class="chat-avatar">
+                        <img src="https://via.placeholder.com/50/aaa" alt="Avatar">
+                    </div>
+                    <div class="chat-details">
+                        <div class="chat-info">
+                            <span class="chat-name">Riki Ardiansah</span>
+                            <span class="chat-time unread-time">07.16</span>
+                        </div>
+                        <div class="chat-message">
+                            <i class="fas fa-check single-receipt"></i>
+                            <p class="message-preview unread-text">Ketiduran mas</p>
+                            <span class="unread-count">1</span>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+
+            <button class="fab">
+                <i class="fas fa-comment-dots"></i>
+            </button>
+
+            <nav class="bottom-nav">
+                <div class="nav-item active">
+                    <i class="fas fa-comment"></i>
+                    <span>Chat</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Pembaruan</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Komunitas</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Panggilan</span>
+                </div>
+            </nav>
+        </div>
+
+        <div class="page active-chat-page">
+            <header class="chat-room-header">
+                <div class="back-button" onclick="closeChat()">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="contact-info">
+                    <img src="https://via.placeholder.com/40/555" alt="Avatar" class="header-avatar">
+                    <span id="contact-name">Nama Kontak</span>
+                </div>
+                <div class="chat-actions">
+                    <i class="fas fa-video"></i>
+                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </header>
+
+            <div class="messages-container">
+                <div class="message received">
+                    Halo, apa kabar?
+                    <span class="message-time">10:00</span>
+                </div>
+                <div class="message sent">
+                    Baik! Kamu gimana?
+                    <span class="message-time">10:01 <i class="fas fa-check-double read-receipt-white"></i></span>
+                </div>
+                <div class="message received">
+                    Lagi buat UI WhatsApp nih. Keren!
+                    <span class="message-time">10:03</span>
+                </div>
+                <div class="message sent">
+                    Mantap. Lanjut!
+                    <span class="message-time">10:04 <i class="fas fa-check-double read-receipt-white"></i></span>
+                </div>
+            </div>
+
+            <div class="message-input-area">
+                <i class="fas fa-grin"></i>
+                <div class="input-field">
+                    <input type="text" placeholder="Ketik pesan">
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="send-button">
+                    <i class="fas fa-microphone"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openChat(name) {
+            document.querySelector('.chat-list-page').classList.remove('active');
+            document.querySelector('.active-chat-page').classList.add('active');
+            document.getElementById('contact-name').textContent = name;
+        }
+
+        function closeChat() {
+            document.querySelector('.active-chat-page').classList.remove('active');
+            document.querySelector('.chat-list-page').classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
